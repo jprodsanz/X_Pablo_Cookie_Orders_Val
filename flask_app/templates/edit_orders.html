@@ -17,20 +17,21 @@
                                     <!-- Update Name input -->
             <div class="form-group mb-3">
                 <div class="form-group">
-                    <input type="text" name="name" class="form-control" placeholder="Name" />
+                    <input type="text" value="{{order.name}}" name="name" class="form-control" placeholder="Name" />
                     <label class="form-label visually-hidden" for="name"></label>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="cookie_type" class="form-control" placeholder="Cookie Type" />
+                    <input type="text"  value="{{order.cookie_type}}" name="cookie_type" class="form-control" placeholder="Cookie Type" />
                     <label class="form-label visually-hidden" for="cookie_type"></label>
                 </div>
                 <div class="form-group">
-                    <input type="number" min=1 name="number_boxes" class="form-control" placeholder="Number Boxes" />
+                    <input type="number" min=1 value="{{order.number_boxes}}" name="number_boxes" class="form-control" placeholder="Number Boxes" />
                     <label class="form-label visually-hidden" for="number_boxes"></label>
                 </div>
             </div>
     </fieldset>
                                                     <!-- Submit button -->
+        <input type="hidden" name="id" value="{{order.id}}">
         <div class="form-outline d-grid gap-2 col-6 mx-auto">
             <button type="submit" class="btn btn-primary btn-block mb-4">Update Order</button>
         </div>

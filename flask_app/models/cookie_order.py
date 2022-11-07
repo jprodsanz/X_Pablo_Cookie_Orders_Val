@@ -73,7 +73,7 @@ class Cookie_order:
 
         query = """
                 UPDATE cookie_orders
-                SET name = %(name)s, cookie_type = %(cookie_type)s, number_boxes = %(number_boxes)s
+                SET name = %(name)s, cookie_type = %(cookie_type)s, number_boxes = %(number_boxes)s 
                 WHERE id = %(id)s;"""
 
         result = connectToMySQL(cls.DB).query_db(query, cookie_order)
