@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="h1 text-center">Cookie Orders</div>
+    <table class="mt-5 table table-hover table-bordered text-center">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Cookie Type</th>
+            <th scope="col">Number Of Boxes</th>
+            <th scope="col">Actions </th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.name }}</td>
+                <td>{{ order.cookie_type }}</td>
+                <td>{{ order.number_boxes }}</td>
+                <td>
+                    <a href="/order/edit/{{ order.id }} ">Edit</a>
+                </td>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="d-grid gap-1 col-5 mx-auto">
+        <a class="btn btn-success btn btn-block mb-2" href="/cookies/new">Add Order</a>
+    </div>
+</div>
+{% endblock content %}
